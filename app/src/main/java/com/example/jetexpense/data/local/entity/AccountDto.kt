@@ -18,13 +18,21 @@ data class AccountDto(
     var income: Double,
     @ColumnInfo(name = "expense")
     var expense: Double
-) {
-    fun AccountDto.toAccount(): Account {
-        return Account(
-            account = accountType,
-            amount = balance,
-            income = income,
-            expense = expense
-        )
-    }
+){
+    fun toAccount(): Account = Account(
+        accountType,
+        balance,
+        income,
+        expense
+    )
+
 }
+
+//fun AccountDto.toAccount(): Account {
+//    return Account(
+//        account = accountType,
+//        amount = balance,
+//        income = income,
+//        expense = expense
+//    )
+//}

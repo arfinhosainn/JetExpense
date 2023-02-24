@@ -23,16 +23,19 @@ data class TransactionDto(
     val transactionType: String,
     @ColumnInfo(name = "transaction_title")
     val title: String
-) {
-    fun TransactionDto.toTransaction(): Transaction {
-        return Transaction(
-            date = date,
-            amount = amount,
-            account = account,
-            category = category,
-            transactionType = transactionType,
-            title = title,
-            dateOfEntry = dateOfEntry
-        )
-    }
+){
+    fun toTransaction() = Transaction(date, dateOfEntry, amount, account, category, transactionType, title)
+
 }
+//    fun TransactionDto.toTransaction(): Transaction {
+//        return Transaction(
+//            date = date,
+//            amount = amount,
+//            account = account,
+//            category = category,
+//            transactionType = transactionType,
+//            title = title,
+//            dateOfEntry = dateOfEntry
+//        )
+//    }
+

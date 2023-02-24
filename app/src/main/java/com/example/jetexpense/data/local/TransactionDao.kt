@@ -31,7 +31,7 @@ interface TransactionDao {
     @Query("SELECT * FROM account_table WHERE account = :account")
     fun getAccount(account: String): Flow<AccountDto>
 
-    @Query("SELECT * FROM transaction_table")
+    @Query("SELECT * FROM account_table")
     fun getAccounts(): Flow<List<AccountDto>>
 
     @Query("DELETE FROM transaction_table")
